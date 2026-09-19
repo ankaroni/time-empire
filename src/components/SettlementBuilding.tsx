@@ -1,10 +1,14 @@
-import{STONE_BUILDING_LABELS,stoneBuildingAsset,type StoneBuildingId}from"../sceneAssets";
+import{useState}from"react";import{STONE_BUILDING_LABELS,stoneBuildingAsset,type StoneBuildingId}from"../sceneAssets";
+
+const FALLBACK:Record<StoneBuildingId,string>={hut:"⛺",farm:"🌾",lumber:"🪵",gatherer:"🌿",mine:"🪨",workshop:"🔥"};
 
 export default function SettlementBuilding({type,level}:{type:StoneBuildingId;level:number}){
+  const[failed,setFailed]=useState(false);
   if(level<1)return null;
   const{src,visualLevel}=stoneBuildingAsset(type,level);
-  return <div className={"sceneAsset sceneAssetImageWrap "+type+" visualLv"+visualLevel}>
-    <img className="sceneAssetImage" src={src} alt="" draggable={false}/>
-    <span className="assetLabel">{STONE_BUILDING_LABELS[type]}<b>Sv. {level}</b><em>Görsel Aşama {visualLevel}/5</em></span>
+  return <div className={"sceneAsset sceneAssetImageWrap "+type+" visualLv"+visualLevel+(failed?" assetMissing":"")}>
+    {!failed&&<img className="sceneAssetImage" src={src} alt={STONE_BUILDING_LABELS[type]} draggable={false} onError={()=>setFailed(true)}/>}
+    {failed&&<span className="assetFallback" aria-hidden="true">{FALLBACK[type]}</span>}
+    <span className="assetLabel">{STONE_BUILDING_LABELS[type]}<b>Sv. {level}</b></span>
   </div>;
 }
