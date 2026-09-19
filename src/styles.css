@@ -161,3 +161,19 @@ footer{margin:10px 22px}
 .topfire:hover{filter:brightness(1.1)!important;box-shadow:0 17px 40px #000d,0 0 52px #f06b3d55,inset 0 1px 0 #ffd19a88!important}
 .productionRain{inset:52px 230px 115px 210px!important}
 .productionRain b{font-size:14px!important;opacity:.55!important}
+
+/* Hard reset of scene presentation: previous overlay stack was still muddy */
+.eraScene.realScene{background-size:cover!important;background-position:center center!important;background-color:#101813!important}
+.eraScene.realScene:before{background:linear-gradient(90deg,rgba(4,10,12,.66) 0%,rgba(4,10,12,.20) 16%,rgba(4,10,12,0) 30%,rgba(4,10,12,0) 77%,rgba(4,10,12,.36) 100%),linear-gradient(0deg,rgba(3,8,10,.62) 0%,rgba(3,8,10,.08) 24%,transparent 45%)!important}
+.eraScene.realScene:after{background:radial-gradient(circle at 50% 48%,rgba(255,177,73,.11),transparent 27%)!important}
+.settlementLayers{left:190px!important;right:220px!important;top:72px!important;bottom:110px!important}
+.sceneAsset.lumber{left:4%!important;top:42%!important}
+.sceneAsset.hut{left:27%!important;top:58%!important}
+.sceneAsset.workshop{left:44%!important;top:39%!important}
+.sceneAsset.mine{left:64%!important;top:31%!important}
+.sceneAsset.farm{right:12%!important;top:58%!important}
+.sceneAsset.gatherer{right:1%!important;top:70%!important}
+.topfire{width:360px!important;height:82px!important;bottom:16px!important;border-radius:18px!important;grid-template-columns:76px 1fr!important;background:linear-gradient(180deg,#d84a2d 0%,#a92e20 48%,#761d18 100%)!important;border:1px solid #ff9e61!important;box-shadow:0 16px 34px #000c,0 0 26px #e85e353d,inset 0 1px 0 #ffd7a880,inset 0 -10px 20px #56110f55!important}
+.topfire .fireCore{transform:scale(1.35)!important;filter:drop-shadow(0 0 10px #ff8c3f)!important}
+.topfire>b{font-size:20px!important;text-shadow:0 2px 4px #64150f!important}
+.topfire>small{font-size:10px!important;color:#ffe0b8!important}
