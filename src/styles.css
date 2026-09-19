@@ -95,3 +95,19 @@ footer{margin:10px 22px}
 @keyframes landingDust{0%,55%{scale:.25;opacity:0}70%{scale:1.35 .8;opacity:.65}100%{scale:2 .45;opacity:0}}
 .topfire{z-index:20!important}
 @media(max-width:1100px){.settlementLayers{left:150px!important;right:190px!important}.sceneAsset{width:125px!important;height:110px!important}.sceneAssetImageWrap{width:125px!important;height:110px!important}}
+
+/* Passive production feedback */
+.productionRain{position:absolute;z-index:18;inset:58px 215px 86px 205px;overflow:hidden;pointer-events:none}
+.productionRain span{position:absolute;top:-54px;display:flex;align-items:center;gap:5px;padding:5px 8px;border:1px solid #e5b75b55;border-radius:18px;background:#071119d9;box-shadow:0 8px 22px #000b,0 0 18px #e9a83b1f;backdrop-filter:blur(5px);animation:productionFall 2.05s cubic-bezier(.18,.72,.22,1) forwards}
+.productionRain b{font-size:20px;filter:drop-shadow(0 2px 5px #000)}
+.productionRain em{font:700 8px "Space Mono";font-style:normal;color:#7fe0a5;white-space:nowrap}
+@keyframes productionFall{0%{translate:0 -30px;opacity:0;scale:.65}12%{opacity:1;scale:1.08}65%{opacity:1}82%{translate:0 270px;opacity:1;scale:1}100%{translate:0 350px;opacity:0;scale:.7}}
+.resources .card{overflow:hidden;position:relative}
+.resources .card:after{content:"";position:absolute;left:-45%;bottom:0;width:35%;height:2px;background:#6de4a2;box-shadow:0 0 8px #6de4a2;animation:rateSweep 2.2s linear infinite;opacity:.65}
+@keyframes rateSweep{to{left:115%}}
+.resources .card span{animation:ratePulse 1.25s ease-in-out infinite alternate}
+@keyframes ratePulse{to{filter:brightness(1.55);text-shadow:0 0 8px #65d89988}}
+.fire.topfire{overflow:visible}
+.fire.topfire:before{content:"";position:absolute;inset:-5px;border:1px solid #ffb15b55;border-radius:16px;animation:fireRewardPulse 1.45s ease-out infinite}
+@keyframes fireRewardPulse{0%{scale:.96;opacity:.7}100%{scale:1.08;opacity:0}}
+@media(prefers-reduced-motion:reduce){.productionRain span,.resources .card:after,.resources .card span,.fire.topfire:before{animation:none}}
