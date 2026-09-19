@@ -177,3 +177,23 @@ footer{margin:10px 22px}
 .topfire .fireCore{transform:scale(1.35)!important;filter:drop-shadow(0 0 10px #ff8c3f)!important}
 .topfire>b{font-size:20px!important;text-shadow:0 2px 4px #64150f!important}
 .topfire>small{font-size:10px!important;color:#ffe0b8!important}
+
+/* Animated world backdrop: makes static terrain feel alive */
+.worldMotion{position:absolute;z-index:4;inset:0;overflow:hidden;pointer-events:none}
+.sunGlow{position:absolute;left:48%;top:22%;width:320px;height:220px;translate:-50% -50%;border-radius:50%;background:radial-gradient(circle,rgba(255,184,89,.22),rgba(255,140,45,.06) 42%,transparent 70%);filter:blur(10px);animation:sunBreathe 5s ease-in-out infinite alternate}
+@keyframes sunBreathe{to{scale:1.14;opacity:.68}}
+.mist{position:absolute;width:48%;height:90px;border-radius:50%;background:radial-gradient(ellipse,rgba(218,226,218,.11),transparent 70%);filter:blur(18px);opacity:.45}
+.mistA{left:-20%;top:38%;animation:mistDriftA 18s linear infinite}
+.mistB{right:-25%;top:57%;animation:mistDriftB 23s linear infinite}
+@keyframes mistDriftA{to{translate:165% 12px}}
+@keyframes mistDriftB{to{translate:-165% -8px}}
+.cloud{position:absolute;width:240px;height:48px;border-radius:50%;background:radial-gradient(ellipse,rgba(220,224,215,.10),transparent 72%);filter:blur(13px)}
+.cloudA{top:10%;left:-250px;animation:cloudTravel 31s linear infinite}
+.cloudB{top:18%;left:-330px;opacity:.55;animation:cloudTravel 43s linear 8s infinite}
+@keyframes cloudTravel{to{translate:calc(100vw + 620px) 0}}
+.birds{position:absolute;top:18%;left:-80px;color:#17151299;font:700 28px Georgia;letter-spacing:10px;transform:rotate(-5deg);animation:birdsFly 19s linear 3s infinite}
+@keyframes birdsFly{0%{translate:0 0;opacity:0}10%{opacity:.55}55%{translate:52vw -45px;opacity:.7}100%{translate:110vw 18px;opacity:0}}
+.embers{position:absolute;left:48%;bottom:78px;width:110px;height:120px;background-image:radial-gradient(circle,#ffb24d 0 1px,transparent 2px),radial-gradient(circle,#ff7338 0 1px,transparent 2px);background-size:21px 27px,31px 37px;opacity:.42;animation:embersRise 3.2s linear infinite}
+@keyframes embersRise{from{transform:translateY(45px) scale(.8);opacity:0}25%{opacity:.45}to{transform:translateY(-80px) scale(1.15);opacity:0}}
+.sceneAtmosphere i{animation-duration:7s!important}
+@media(prefers-reduced-motion:reduce){.worldMotion>*{animation:none!important}}
