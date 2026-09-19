@@ -197,3 +197,8 @@ footer{margin:10px 22px}
 @keyframes embersRise{from{transform:translateY(45px) scale(.8);opacity:0}25%{opacity:.45}to{transform:translateY(-80px) scale(1.15);opacity:0}}
 .sceneAtmosphere i{animation-duration:7s!important}
 @media(prefers-reduced-motion:reduce){.worldMotion>*{animation:none!important}}
+
+/* No raster scene background */
+.eraScene.realScene{background-image:none!important;background-color:#09110f!important;background:radial-gradient(ellipse at 50% 38%,#26301f 0%,#121b16 38%,#09110f 72%,#05090a 100%)!important}
+.eraScene.realScene:before{background:linear-gradient(180deg,rgba(202,145,69,.035),transparent 38%,rgba(0,0,0,.48) 100%)!important}
+.eraScene.realScene:after{background:radial-gradient(ellipse at 50% 57%,rgba(221,130,48,.12),transparent 30%)!important}
