@@ -118,3 +118,5 @@ footer{margin:10px 22px}
 .productionRain b{font-size:18px!important;filter:grayscale(.12) saturate(.8) drop-shadow(0 3px 4px #0008)!important}
 .productionRain em{display:none!important}
 @keyframes resourceShower{0%{transform:translate3d(0,-28px,0) rotate(-8deg) scale(.72);opacity:0}8%{opacity:.32}55%{opacity:.5}100%{transform:translate3d(10px,390px,0) rotate(16deg) scale(.9);opacity:0}}
+
+.devResources{position:absolute;z-index:50;left:18px;top:260px;padding:7px 10px;border:1px solid #d7ad5a66;border-radius:6px;background:#08131bd9;color:#e9c777;font:700 8px "Space Mono";cursor:pointer;opacity:.55}.devResources:hover{opacity:1;background:#322713}
