@@ -75,3 +75,23 @@ footer{margin:10px 22px}
 .sceneAssetImageWrap.assetMissing .assetLabel{top:auto!important;bottom:0!important}
 .sceneAssetImage{border:0!important;outline:0!important}
 @media(min-width:1101px){.tophero{height:min(570px,67vh)!important;min-height:500px!important}.eraScene{height:min(570px,67vh)!important;min-height:500px!important}}
+
+/* Settlement spatial redesign: clear lanes + upgrade drop */
+.settlementLayers{left:205px!important;right:220px!important;top:64px!important;bottom:88px!important}
+.sceneAsset{width:150px!important;height:128px!important;animation:none!important;transform-origin:50% 100%!important}
+.sceneAssetImageWrap{width:150px!important;height:128px!important}
+.sceneAsset.lumber{left:2%!important;top:34%!important;transform:scale(.88)!important}
+.sceneAsset.hut{left:24%!important;top:50%!important;transform:scale(.78)!important}
+.sceneAsset.workshop{left:41%!important;top:20%!important;transform:scale(.78)!important}
+.sceneAsset.mine{left:59%!important;top:14%!important;transform:scale(.9)!important}
+.sceneAsset.farm{right:5%!important;top:47%!important;transform:scale(.84)!important}
+.sceneAsset.gatherer{right:0!important;top:70%!important;transform:scale(.66)!important}
+.sceneAssetImage{max-width:138px!important;max-height:112px!important}
+.assetLabel{top:auto!important;bottom:-15px!important;min-width:92px!important;white-space:nowrap;z-index:12!important}
+.assetFallback{width:76px!important;height:60px!important;margin:auto auto 20px!important;font-size:32px!important;background:none!important}
+.assetDrop{animation:buildingDrop .62s cubic-bezier(.18,.88,.25,1.18)!important}
+@keyframes buildingDrop{0%{translate:0 -170px;opacity:0;filter:drop-shadow(0 25px 12px #0000)}68%{translate:0 7px;opacity:1}82%{translate:0 -5px}100%{translate:0 0;opacity:1}}
+.assetDrop:after{content:"";position:absolute;left:50%;bottom:3px;width:68px;height:13px;translate:-50% 0;border-radius:50%;background:#c69a5733;filter:blur(5px);animation:landingDust .75s ease-out both;pointer-events:none}
+@keyframes landingDust{0%,55%{scale:.25;opacity:0}70%{scale:1.35 .8;opacity:.65}100%{scale:2 .45;opacity:0}}
+.topfire{z-index:20!important}
+@media(max-width:1100px){.settlementLayers{left:150px!important;right:190px!important}.sceneAsset{width:125px!important;height:110px!important}.sceneAssetImageWrap{width:125px!important;height:110px!important}}
