@@ -111,3 +111,10 @@ footer{margin:10px 22px}
 .fire.topfire:before{content:"";position:absolute;inset:-5px;border:1px solid #ffb15b55;border-radius:16px;animation:fireRewardPulse 1.45s ease-out infinite}
 @keyframes fireRewardPulse{0%{scale:.96;opacity:.7}100%{scale:1.08;opacity:0}}
 @media(prefers-reduced-motion:reduce){.productionRain span,.resources .card:after,.resources .card span,.fire.topfire:before{animation:none}}
+
+/* High-frequency translucent resource particles */
+.productionRain{inset:54px 215px 74px 205px!important;filter:none}
+.productionRain span{top:-34px!important;padding:0!important;border:0!important;background:transparent!important;box-shadow:none!important;backdrop-filter:none!important;animation:resourceShower 1.18s linear forwards!important;opacity:.42;will-change:transform,opacity}
+.productionRain b{font-size:18px!important;filter:grayscale(.12) saturate(.8) drop-shadow(0 3px 4px #0008)!important}
+.productionRain em{display:none!important}
+@keyframes resourceShower{0%{transform:translate3d(0,-28px,0) rotate(-8deg) scale(.72);opacity:0}8%{opacity:.32}55%{opacity:.5}100%{transform:translate3d(10px,390px,0) rotate(16deg) scale(.9);opacity:0}}
